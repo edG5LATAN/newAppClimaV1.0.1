@@ -1,8 +1,8 @@
 .minicard{
   width: 250px;
-  /* background-color: rgba(197, 190, 181, 0.849); */
   transition: 0.1s ease-in-out;
   margin: 3px;
+  background-position: center;
 }
 .minicard:hover{
   cursor: pointer;
@@ -17,6 +17,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  background: rgba(245, 243, 243, 0.74);
 }
 @media (min-width:400px) {
   .minicard{

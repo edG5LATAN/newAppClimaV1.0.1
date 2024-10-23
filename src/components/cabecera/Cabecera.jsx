@@ -1,21 +1,7 @@
 import React, { useState } from "react";
 import "./Cabecera.css";
 
-function Cabecera({ data, position }) {
-
-  const [imagen,setimagen]=useState("https://i.pinimg.com/originals/98/19/2f/98192f7719110c037ef789a1426cca37.jpg")
-
-  const cambiarImagen=()=>{
-    const hour = new Date().getHours();
-    if (hour >= 6 && hour < 12) {
-      setimagen("https://i.pinimg.com/originals/98/19/2f/98192f7719110c037ef789a1426cca37.jpg");
-    } else if (hour >= 12 && hour < 18) {
-      setimagen("https://i.pinimg.com/originals/b0/52/81/b05281ad26bd8b364b0e5e0ad899c402.jpg");
-    } else {
-      setimagen("https://i.pinimg.com/originals/21/23/7c/21237c176266e2e032c32b2ae6716a20.jpg");
-    }
-  }
-  
+function Cabecera({convertirFecha ,cambiarImagen,data, position, imagen }) {
 
   const traerPosition = () => {
     position();
@@ -34,7 +20,7 @@ function Cabecera({ data, position }) {
       />
       <div class="cabecera_info card-img-overlay">
         <div className="cabecera_info1">
-          <h5 class="card-title">Fecha {data.day1.date}</h5>
+          <h5 class="card-title">Fecha {convertirFecha(data.day1.date)}</h5>
           <div className="d-flex just cabecera_front">
             <div className="p-2">
               <img
@@ -54,21 +40,21 @@ function Cabecera({ data, position }) {
             </div>
           </div>
           <div class="card-text d-flex justify-content-around ">
-            <p className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1">
+            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1">
               temp max 
-              <small>{data.day1.temperature_max}</small> 
-            </p>
-            <p className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1">
+              <small>{data.day1.temperature_max}ºC</small> 
+            </small>
+            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1">
               temp min 
-              <small>{data.day1.temperature_min}</small>
-              </p>
-            <p className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1">
+              <small>{data.day1.temperature_min}ºC</small>
+              </small>
+            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1">
               amanecer 
               <small>{data.day1.sunrise}AM</small>
-              </p>
-            <p className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1">
+              </small>
+            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1">
               atardecer 
-              <small>{data.day1.sunset}PM</small></p>
+              <small>{data.day1.sunset}PM</small></small>
           </div>
           <button
             onClick={traerPosition}

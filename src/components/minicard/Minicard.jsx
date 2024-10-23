@@ -1,9 +1,9 @@
 import React from "react";
 import "./Minicard.css";
 
-function Minicard({data}) {
+function Minicard({convertirFecha,data,imagen}) {
   return (
-    <div class="card minicard bg-body-secondary">
+    <div class="card minicard bg-body-secondary" style={{backgroundImage:`url(${imagen})`}}>
       <div className="d-flex justify-content-center align-items-center p-2">
         <img
           src={`https://v5i.tutiempo.net/wi/01/90/${data.icon}.png`}
@@ -13,7 +13,7 @@ function Minicard({data}) {
       </div>
 
       <div class="minicard-contenedor2 card-body">
-        <h5 class="card-title">fecha {data.date} </h5>
+        <h5 class="card-title">fecha {convertirFecha(data.date)} </h5>
         <p class="card-text">{data.text}</p>
         <div className="d-flex flex-wrap justify-content-evenly align-items-center">
           <div className="icono_minicard pb-2">
@@ -30,8 +30,8 @@ function Minicard({data}) {
         </div>
         
         <p class="card-text d-flex">
-        <small class="fst-italic text-primary">temp maxima {data.temperature_max}</small>
-        <small class="fst-italic text-primary">temp minima {data.temperature_min}</small>
+        <small class="fst-italic text-primary">temp maxima {data.temperature_max}ºC</small>
+        <small class="fst-italic text-primary">temp minima {data.temperature_min}ºC</small>
         </p>
       </div>
     </div>

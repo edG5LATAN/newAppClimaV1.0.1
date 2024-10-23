@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Cabecera from "../cabecera/Cabecera";
 import Minicard from "../minicard/Minicard";
-import axios from "axios";
 import { traerData } from "../../services/Services";
 
 function Home() {
   const api = "4wT44aXaXqXNZ7z";
   let newLatitud = "";
   let newLongitud = "";
+  const [imagen,setimagen]=useState("https://i.pinimg.com/originals/98/19/2f/98192f7719110c037ef789a1426cca37.jpg")
   const [latitud, setlatitud] = useState("");
   const [longitud, setlongitud] = useState("");
   const [data, setdata] = useState({
@@ -457,20 +457,39 @@ function Home() {
      traerData(latitud,longitud,setdata)
      setupdate(!update)
   };
+
+
+  const cambiarImagen=()=>{
+    const hour = new Date().getHours();
+    if (hour >= 6 && hour < 12) {
+      setimagen("https://i.pinimg.com/originals/98/19/2f/98192f7719110c037ef789a1426cca37.jpg");
+    } else if (hour >= 12 && hour < 18) {
+      setimagen("https://i.pinimg.com/originals/b0/52/81/b05281ad26bd8b364b0e5e0ad899c402.jpg");
+    } else {
+      setimagen("https://i.pinimg.com/originals/21/23/7c/21237c176266e2e032c32b2ae6716a20.jpg");
+    }
+  }
+
+    const convertirFecha = (fecha) => {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return new Date(fecha).toLocaleDateString('es-ES', options);
+    };
+
+
   useState(()=>{
 
   },update)
 
   return (
     <div className="container">
-      <Cabecera data={data} position={position} />
+      <Cabecera convertirFecha={convertirFecha} cambiarImagen={cambiarImagen} data={data} position={position} imagen={imagen} />
       <div className="mt-2 d-flex justify-content-evenly align-items-center flex-wrap">
-        <Minicard data={data.day2} />
-        <Minicard data={data.day3} />
-        <Minicard data={data.day4} />
-        <Minicard data={data.day5} />
-        <Minicard data={data.day6} />
-        <Minicard data={data.day7} />
+        <Minicard convertirFecha={convertirFecha} data={data.day2 } imagen={imagen}/>
+        <Minicard convertirFecha={convertirFecha} data={data.day3} imagen={imagen}/>
+        <Minicard convertirFecha={convertirFecha} data={data.day4} imagen={imagen}/>
+        <Minicard convertirFecha={convertirFecha} data={data.day5} imagen={imagen}/>
+        <Minicard convertirFecha={convertirFecha} data={data.day6} imagen={imagen}/>
+        <Minicard convertirFecha={convertirFecha} data={data.day7} imagen={imagen}/>
       </div>
     </div>
   );
