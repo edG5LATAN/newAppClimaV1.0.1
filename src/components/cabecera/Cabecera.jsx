@@ -40,19 +40,19 @@ function Cabecera({convertirFecha ,cambiarImagen,data, position, imagen }) {
             </div>
           </div>
           <div class="card-text d-flex justify-content-around ">
-            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1">
+            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1 ms-0 ps-0">
               temp max 
               <small>{data.day1.temperature_max}ºC</small> 
             </small>
-            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1">
+            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1 ms-0 ps-0">
               temp min 
               <small>{data.day1.temperature_min}ºC</small>
               </small>
-            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1">
+            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1 ms-0 ps-0">
               amanecer 
               <small>{data.day1.sunrise}AM</small>
               </small>
-            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1">
+            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1 ms-0 ps-0">
               atardecer 
               <small>{data.day1.sunset}PM</small></small>
           </div>
@@ -60,7 +60,7 @@ function Cabecera({convertirFecha ,cambiarImagen,data, position, imagen }) {
             onClick={traerPosition}
             className="btn btn-primary cabecera_btn cabecera_boton"
           >
-            Estado de Tiempo
+            Ver tu localidad
           </button>
         </div>
         <div className="cabecera_img">
