@@ -27,6 +27,16 @@
   align-items: center;
 
 }
+.cabecera_box_op{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 70%;
+  margin: 0 2px;
+  font-weight: bold;
+  font-style: oblique;
+}
 .cabecera_img{
   width: 40%;
   display: flex;
@@ -55,5 +65,8 @@
   .cabecera_boton{
     padding: 2px;
     margin: 0;
+  }
+  .cabecera_box_op{
+    font-weight: unset;
   }
 }

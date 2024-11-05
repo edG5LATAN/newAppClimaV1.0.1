@@ -19,7 +19,7 @@ function Cabecera({convertirFecha ,cambiarImagen,data, position, imagen }) {
         alt="imagen de fondo"
       />
       <div class="cabecera_info card-img-overlay">
-        <div className="cabecera_info1">
+        <div className="cabecera_info1 pb-3 pt-2">
           <h5 class="card-title">Fecha {convertirFecha(data.day1.date)}</h5>
           <div className="d-flex just cabecera_front">
             <div className="p-2">
@@ -39,20 +39,20 @@ function Cabecera({convertirFecha ,cambiarImagen,data, position, imagen }) {
               <p>fase lunar</p>
             </div>
           </div>
-          <div class="card-text d-flex justify-content-around ">
-            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1 ms-0 ps-0">
+          <div class="card-text d-flex justify-content-around mb-2">
+            <small className="d-flex flex-column bg-body-secondary rounded-3 cabecera_box_op">
               temp max 
               <small>{data.day1.temperature_max}ºC</small> 
             </small>
-            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1 ms-0 ps-0">
+            <small className="d-flex flex-column bg-body-secondary rounded-3 cabecera_box_op">
               temp min 
               <small>{data.day1.temperature_min}ºC</small>
               </small>
-            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1 ms-0 ps-0">
+            <small className="d-flex flex-column bg-body-secondary rounded-3 cabecera_box_op">
               amanecer 
               <small>{data.day1.sunrise}AM</small>
               </small>
-            <small className="d-flex flex-column bg-body-secondary rounded-3 p-1 m-1 ms-0 ps-0">
+            <small className="d-flex flex-column bg-body-secondary rounded-3 cabecera_box_op">
               atardecer 
               <small>{data.day1.sunset}PM</small></small>
           </div>

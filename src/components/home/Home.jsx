@@ -454,7 +454,7 @@ function Home() {
   });
 
   const position = () => {
-     traerData(latitud,longitud,setdata)
+    //  traerData(latitud,longitud,setdata)
      setupdate(!update)
   };
 
