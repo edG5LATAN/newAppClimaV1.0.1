@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const api=process.env.API_KEY || "4wT44aXaXqXNZ7z";
+const api=process.env.REACT_APP_API;
 
 export const traerData=(latitud,longitud,setdata)=>{
   axios.get(`https://api.tutiempo.net/json/?lan=es&apid=${api}&ll=${latitud},${longitud}`)
